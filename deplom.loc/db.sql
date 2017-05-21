@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 21 2017 г., 18:50
+-- Время создания: Май 11 2017 г., 23:33
 -- Версия сервера: 5.7.16-log
 -- Версия PHP: 5.6.29
 
@@ -68,25 +68,6 @@ INSERT INTO `article` (`id`, `pre_result`, `article`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `login`
---
-
-CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
-  `login` varchar(20) NOT NULL,
-  `pass` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `login`
---
-
-INSERT INTO `login` (`id`, `login`, `pass`) VALUES
-(1, 'root', 1234);
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `pre_result`
 --
 
@@ -142,10 +123,7 @@ CREATE TABLE `test_1` (
 --
 
 INSERT INTO `test_1` (`id`, `age`, `sex`, `test_1`) VALUES
-(13, 'any', 'any', 'Голова'),
-(15, 'any', 'any', 'Грудная клетка'),
-(16, 'any', 'any', 'Желудок'),
-(17, 'any', 'any', 'Спина');
+(13, 'any', 'any', 'Голова');
 
 -- --------------------------------------------------------
 
@@ -208,13 +186,6 @@ ALTER TABLE `article`
 ALTER TABLE `article` ADD FULLTEXT KEY `article` (`article`);
 
 --
--- Индексы таблицы `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `login` (`login`);
-
---
 -- Индексы таблицы `pre_result`
 --
 ALTER TABLE `pre_result`
@@ -273,17 +244,12 @@ ALTER TABLE `age`
 -- AUTO_INCREMENT для таблицы `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT для таблицы `login`
---
-ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `pre_result`
 --
 ALTER TABLE `pre_result`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT для таблицы `sex`
 --
@@ -298,12 +264,12 @@ ALTER TABLE `test_1`
 -- AUTO_INCREMENT для таблицы `test_2`
 --
 ALTER TABLE `test_2`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `test_3`
 --
 ALTER TABLE `test_3`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

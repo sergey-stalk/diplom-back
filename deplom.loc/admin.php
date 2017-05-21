@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+if ($_SESSION['logget'] != root) 
+	header('location: http://deplom.loc/login.php');
 ini_set('display_errors', 'on');
 include ('connect.php');
 $sex = $_POST['sex'];
@@ -17,7 +19,7 @@ $delete_article = ($_POST['delete_article']);
 
 /*ОБРОБОТЧИК РЕДИРЕКТА ДОБАВЛЕНИЯ*/
 
- session_start();
+
   if (!empty($_POST["test_1"])) {
     $_SESSION["test_1"] = $_POST["test_1"];
     header("Location: ".$_SERVER["REQUEST_URI"]);
@@ -368,6 +370,7 @@ echo $delete_article;
 			echo "<option value='".$row['pre_result']."'>".$row['pre_result']."</option>"."<br>";
 		}
 			mysql_close();
+
 		?>
 		</select>
 		<br>
@@ -377,5 +380,7 @@ echo $delete_article;
 	</form>
 	<br>
 	<a href="show_article.php">Простотреть существующие статьи</a>
+	<br>
+	<a href="logout.php">Выйти</a>
 </body>
 </html>
